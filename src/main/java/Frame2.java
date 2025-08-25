@@ -184,7 +184,7 @@ public class Frame2 extends JFrame implements ActionListener {
                 operator = '^';
             }
         } else if (e.getSource() == buttonSettings) {
-            settingsMenu = new SettingsMenu();
+            settingsMenu = new SettingsMenu(this);
             settingsMenu.setVisible(true);
 
         } else if (e.getSource() == buttonPlusOrMinus) {

@@ -10,12 +10,13 @@ public class SettingsMenu extends JDialog {
     private JPanel settingsPanel;
     private JPanel buttonPanel;
 
-    public SettingsMenu() {
+    public SettingsMenu(Component component) {
+        setMinimumSize(new Dimension(200,200));
         setContentPane(mainPanel);
         setModal(true);
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(component);
         getRootPane().setDefaultButton(buttonOK);
-        setMinimumSize(new Dimension(200,200));
+
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
