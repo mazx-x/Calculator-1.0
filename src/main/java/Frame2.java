@@ -35,11 +35,11 @@ public class Frame2 extends JFrame implements ActionListener {
     private JScrollPane displayScrollPane;
     private JButton buttonSettings;
     private JScrollPane extraDisplayScrollPane;
-    private JLabel SIZER;
     private double num1 = 0;
     private double num2 = 0;
     private char operator;
     private BigDecimal bd;
+    private SettingsMenu settingsMenu;
 
     public Frame2() {
         init();
@@ -180,10 +180,14 @@ public class Frame2 extends JFrame implements ActionListener {
             if (!(textField1.getText().equals(""))) {
                 num1 = Double.parseDouble(textField1.getText());
                 textField1.setText("");
-                removeDecTextField2(num1, '^');
+                removeDecTextField2(num1,'^');
                 operator = '^';
             }
-        }else if (e.getSource() == buttonPlusOrMinus) {
+        } else if (e.getSource() == buttonSettings) {
+            settingsMenu = new SettingsMenu();
+            settingsMenu.setVisible(true);
+
+        } else if (e.getSource() == buttonPlusOrMinus) {
             if (!(textField1.getText().equals(""))) {
                 num1 = Double.parseDouble(textField1.getText());
             }
@@ -249,6 +253,5 @@ public class Frame2 extends JFrame implements ActionListener {
             textField2.setText(String.valueOf(result).concat(String.valueOf(operator)));
         }
     }
-
 }
 
